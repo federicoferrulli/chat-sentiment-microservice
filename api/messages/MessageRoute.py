@@ -27,7 +27,7 @@ async def getAll(req: Request, service: MessageService = Depends(MessageService)
         status_code=200,
         description="Salva un messaggio inserendo un 'Sentiment' al messaggio",
         response_description="Restituisce il messaggio inserito in memoria",
-        response_model = MessageModel | dict
+        response_model = dict
     )
 async def create(req: Request, service: MessageService = Depends(MessageService)):
     newMessage: Message = await req.json()
